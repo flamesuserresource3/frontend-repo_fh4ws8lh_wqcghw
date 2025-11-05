@@ -1,56 +1,50 @@
-import { Users, Shield, Award } from "lucide-react";
+import React from 'react';
+import { Users, Award, Factory } from 'lucide-react';
 
-export default function About() {
+const About = () => {
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Tentang Perusahaan</h2>
-            <p className="mt-4 text-gray-600 leading-relaxed">
-              Didirikan pada tahun 1999, kami berkembang menjadi produsen pulp dan
-              kertas terkemuka di kawasan Asia Tenggara. Fokus kami adalah
-              menghadirkan produk ramah lingkungan, menjaga kualitas, dan
-              menjalin kemitraan jangka panjang dengan pelanggan global.
+    <section id="about" className="bg-white py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">About Us</h2>
+          <p className="mt-4 text-gray-600">
+            We are a vertically integrated pulp & paper company delivering reliable quality at scale. 
+            Our operations prioritize forest stewardship, circularity, and community prosperity.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+            <div className="flex items-center gap-3">
+              <Factory className="h-6 w-6 text-emerald-600" />
+              <h3 className="text-lg font-semibold text-gray-900">Integrated Mills</h3>
+            </div>
+            <p className="mt-3 text-sm leading-6 text-gray-600">
+              Strategically located mills with efficient energy systems ensure consistent supply and reduced emissions.
             </p>
-
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-5">
-                <Users className="text-emerald-700" />
-                <p className="mt-3 text-sm text-gray-600">>2.000 karyawan</p>
-                <p className="text-base font-semibold text-gray-900">Tim ahli berpengalaman</p>
-              </div>
-              <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-5">
-                <Shield className="text-emerald-700" />
-                <p className="mt-3 text-sm text-gray-600">Keamanan & kualitas</p>
-                <p className="text-base font-semibold text-gray-900">Standar internasional</p>
-              </div>
-              <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-5">
-                <Award className="text-emerald-700" />
-                <p className="mt-3 text-sm text-gray-600">Penghargaan industri</p>
-                <p className="text-base font-semibold text-gray-900">Inovasi & keberlanjutan</p>
-              </div>
-            </div>
           </div>
-
-          <div className="order-1 lg:order-2">
-            <div className="relative">
-              <div className="aspect-[4/3] w-full rounded-3xl border border-gray-100 bg-white shadow-xl overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1514108225820-2b602873e539?q=80&w=1600&auto=format&fit=crop"
-                  alt="Tim profesional pabrik kertas"
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="absolute -bottom-6 -left-6 bg-white border border-gray-100 shadow-lg rounded-2xl p-4">
-                <p className="text-sm font-semibold text-gray-900">Jejak karbon berkurang 35%</p>
-                <p className="text-xs text-gray-500">Program efisiensi energi 5 tahun terakhir</p>
-              </div>
+          <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+            <div className="flex items-center gap-3">
+              <Users className="h-6 w-6 text-emerald-600" />
+              <h3 className="text-lg font-semibold text-gray-900">People First</h3>
             </div>
+            <p className="mt-3 text-sm leading-6 text-gray-600">
+              A culture of safety, learning, and inclusion empowers our teams to innovate responsibly.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+            <div className="flex items-center gap-3">
+              <Award className="h-6 w-6 text-emerald-600" />
+              <h3 className="text-lg font-semibold text-gray-900">Recognized Quality</h3>
+            </div>
+            <p className="mt-3 text-sm leading-6 text-gray-600">
+              Global certifications and customer trust built on consistent product performance.
+            </p>
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default About;

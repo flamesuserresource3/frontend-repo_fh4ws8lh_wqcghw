@@ -3,17 +3,7 @@
 > vite
 
 
-  VITE v5.4.20  ready in 257 ms
+  VITE v5.4.20  ready in 269 ms
 
   ➜  Local:   http://localhost:3000/
   ➜  Network: http://172.20.3.27:3000/
-1:57:00 AM [vite] warning: The character ">" is not valid inside a JSX element
-18 |                <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-5">
-19 |                  <Users className="text-emerald-700" />
-20 |                  <p className="mt-3 text-sm text-gray-600">>2.000 karyawan</p>
-   |                                                            ^
-21 |                  <p className="text-base font-semibold text-gray-900">Tim ahli berpengalaman</p>
-22 |                </div>
-
-  Plugin: vite:esbuild
-  File: /home/workspace/src/components/About.jsx

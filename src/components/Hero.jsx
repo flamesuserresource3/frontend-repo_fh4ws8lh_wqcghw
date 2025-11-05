@@ -1,73 +1,83 @@
-import { ArrowRight, Leaf, Factory } from "lucide-react";
+import React from 'react';
+import { ArrowRight, Leaf, Award, Shield } from 'lucide-react';
 
-export default function Hero() {
+const Hero = () => {
   return (
-    <section id="home" className="relative overflow-hidden bg-gradient-to-b from-emerald-50 via-white to-white">
-      <div className="absolute inset-0 pointer-events-none" aria-hidden>
-        <div className="absolute -top-32 -right-24 h-96 w-96 rounded-full bg-emerald-200/40 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-teal-200/40 blur-3xl" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 via-white to-white">
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-emerald-100 blur-3xl opacity-60" />
+        <div className="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-teal-100 blur-3xl opacity-60" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 pt-28 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="mx-auto max-w-7xl px-6 pt-24 pb-16 sm:pt-28 sm:pb-20 lg:px-8">
+        <div className="grid items-center gap-10 md:grid-cols-2">
           <div>
-            <span className="inline-flex items-center gap-2 text-emerald-700 font-medium bg-emerald-50 border border-emerald-100 px-3 py-1 rounded-full">
-              <Leaf size={18} /> Sustainable Pulp & Paper
-            </span>
-            <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight">
-              Inovasi Pulp & Paper untuk Masa Depan yang Berkelanjutan
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/70 px-3 py-1 text-sm text-emerald-700 shadow-sm backdrop-blur">
+              <Leaf className="h-4 w-4" />
+              Sustainable Pulp & Paper
+            </div>
+            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+              Building a cleaner future with responsible fiber
             </h1>
-            <p className="mt-5 text-lg text-gray-600 leading-relaxed">
-              Kami memproduksi pulp dan kertas berkualitas tinggi dengan
-              mengutamakan efisiensi, kualitas, dan tanggung jawab lingkungan.
-              Mendukung berbagai industri dari kemasan hingga percetakan.
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-gray-600 sm:text-lg">
+              We manufacture high‑quality pulp and paper products with a deep commitment to
+              sustainability, safety, and innovation across the value chain.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a
                 href="#products"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors shadow-sm"
+                className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-3 text-white shadow-lg shadow-emerald-600/20 transition hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
               >
-                Jelajahi Produk <ArrowRight size={18} />
+                Explore Products
+                <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-gray-900 font-semibold border border-gray-200 hover:border-gray-300 transition-colors"
+                href="#about"
+                className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-3 text-gray-900 shadow-sm transition hover:border-gray-300"
               >
-                Hubungi Kami
+                Learn More
               </a>
             </div>
-            <div className="mt-10 grid grid-cols-3 gap-6">
-              {[{label: "Tahun Pengalaman", value: "25+"}, {label: "Kapasitas/Tahun", value: "500K ton"}, {label: "Negara Tujuan", value: "30+"}].map((stat) => (
-                <div key={stat.label} className="text-center bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-                  <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
-                  <div className="text-sm text-gray-500">{stat.label}</div>
+
+            <div className="mt-10 grid max-w-lg grid-cols-2 gap-4 sm:grid-cols-3">
+              <div className="flex items-center gap-3 rounded-lg border border-gray-100 bg-white p-4 shadow-sm">
+                <Award className="h-5 w-5 text-amber-500" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">ISO Certified</p>
+                  <p className="text-xs text-gray-500">Quality & Environment</p>
                 </div>
-              ))}
+              </div>
+              <div className="flex items-center gap-3 rounded-lg border border-gray-100 bg-white p-4 shadow-sm">
+                <Shield className="h-5 w-5 text-emerald-600" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">Safety First</p>
+                  <p className="text-xs text-gray-500">Zero harm culture</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 rounded-lg border border-gray-100 bg-white p-4 shadow-sm sm:col-span-1 col-span-2">
+                <Leaf className="h-5 w-5 text-emerald-600" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">Low Carbon</p>
+                  <p className="text-xs text-gray-500">Net‑zero 2050 roadmap</p>
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="relative">
-            <div className="aspect-[4/3] w-full rounded-3xl border border-gray-100 bg-white shadow-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-tr from-emerald-600/10 via-transparent to-teal-600/10" />
+            <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1533119400600-72fa5b85f5b0?q=80&w=1600&auto=format&fit=crop"
-                alt="Modern paper production"
+                src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1600&auto=format&fit=crop"
+                alt="Sustainable pulp & paper"
                 className="h-full w-full object-cover"
                 loading="eager"
               />
-            </div>
-            <div className="absolute -bottom-6 -right-6 bg-white border border-gray-100 shadow-lg rounded-2xl p-4 flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-emerald-600/10 flex items-center justify-center text-emerald-700">
-                <Factory size={20} />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-gray-900">ISO 14001 Certified</p>
-                <p className="text-xs text-gray-500">Standar manajemen lingkungan</p>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Hero;

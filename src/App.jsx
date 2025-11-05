@@ -1,122 +1,86 @@
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Products from "./components/Products";
-import Sustainability from "./components/Sustainability";
-import { Leaf } from "lucide-react";
+import React from 'react';
+import Hero from './components/Hero';
+import Products from './components/Products';
+import Sustainability from './components/Sustainability';
+import AcaciaTree from './components/AcaciaTree';
 
-export default function App() {
+function App() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
-      {/* Top Navigation */}
-      <header className="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="#home" className="inline-flex items-center gap-2 font-extrabold text-gray-900">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-600 text-white">
-              <Leaf size={18} />
-            </span>
-            Pulp & Paper Co.
+      {/* Header */}
+      <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+          <a href="#" className="flex items-center gap-2">
+            <span className="inline-block h-7 w-7 rounded-md bg-emerald-600" />
+            <span className="text-sm font-semibold tracking-wide text-gray-900">GreenFiber</span>
           </a>
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
-            <a href="#about" className="hover:text-gray-900">Tentang</a>
-            <a href="#products" className="hover:text-gray-900">Produk</a>
+          <nav className="hidden gap-6 text-sm font-medium text-gray-700 sm:flex">
+            <a href="#products" className="hover:text-gray-900">Products</a>
+            <a href="#acacia" className="hover:text-gray-900">Akasia</a>
             <a href="#sustainability" className="hover:text-gray-900">Sustainability</a>
-            <a href="#contact" className="hover:text-gray-900">Kontak</a>
+            <a href="#contact" className="hover:text-gray-900">Contact</a>
           </nav>
-          <a
-            href="#contact"
-            className="hidden sm:inline-flex px-4 py-2 rounded-lg bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-700"
-          >
-            Dapatkan Penawaran
-          </a>
         </div>
       </header>
 
+      {/* Content */}
       <main>
         <Hero />
-        <About />
         <Products />
+        <AcaciaTree />
         <Sustainability />
 
-        {/* Contact / CTA section */}
-        <section id="contact" className="py-20 bg-gradient-to-b from-emerald-50 to-white">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Mari Bekerja Sama</h2>
-                <p className="mt-3 text-gray-600">
-                  Tim kami siap membantu kebutuhan pulp dan kertas Anda. Kirimkan
-                  pertanyaan, minta sampel, atau jadwalkan kunjungan pabrik.
-                </p>
-                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="rounded-xl border border-gray-200 p-4 bg-white">
-                    <p className="text-sm text-gray-500">Email</p>
-                    <p className="font-semibold">sales@pulpandpaper.co</p>
-                  </div>
-                  <div className="rounded-xl border border-gray-200 p-4 bg-white">
-                    <p className="text-sm text-gray-500">Telepon</p>
-                    <p className="font-semibold">+62 21 555 1234</p>
-                  </div>
-                  <div className="rounded-xl border border-gray-200 p-4 bg-white">
-                    <p className="text-sm text-gray-500">Alamat</p>
-                    <p className="font-semibold">Kawasan Industri Paper, Karawang</p>
-                  </div>
-                  <div className="rounded-xl border border-gray-200 p-4 bg-white">
-                    <p className="text-sm text-gray-500">Jam Operasional</p>
-                    <p className="font-semibold">Senin–Jumat, 09.00–17.00</p>
-                  </div>
-                </div>
-              </div>
+        {/* Contact */}
+        <section id="contact" className="bg-gray-50 py-16 sm:py-20">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">Contact Us</h2>
+              <p className="mt-4 text-gray-600">Have a question or need a quote? Send us a message.</p>
+            </div>
 
-              <form className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm space-y-4">
-                <div>
-                  <label className="text-sm font-medium text-gray-700">Nama</label>
-                  <input
-                    type="text"
-                    className="mt-1 w-full rounded-lg border-gray-300 focus:ring-emerald-600 focus:border-emerald-600"
-                    placeholder="Nama Anda"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700">Email</label>
-                  <input
-                    type="email"
-                    className="mt-1 w-full rounded-lg border-gray-300 focus:ring-emerald-600 focus:border-emerald-600"
-                    placeholder="email@perusahaan.com"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700">Pesan</label>
-                  <textarea
-                    rows="4"
-                    className="mt-1 w-full rounded-lg border-gray-300 focus:ring-emerald-600 focus:border-emerald-600"
-                    placeholder="Ceritakan kebutuhan Anda"
-                  />
-                </div>
-                <button
-                  type="button"
-                  className="w-full inline-flex justify-center px-4 py-3 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700"
-                >
-                  Kirim Permintaan
+            <div className="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500"
+              />
+              <input
+                type="email"
+                placeholder="Work Email"
+                className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500"
+              />
+              <input
+                type="text"
+                placeholder="Company"
+                className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 sm:col-span-2"
+              />
+              <textarea
+                rows="4"
+                placeholder="How can we help?"
+                className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 sm:col-span-2"
+              />
+              <div className="sm:col-span-2">
+                <button className="inline-flex w-full items-center justify-center rounded-lg bg-emerald-600 px-5 py-3 text-white shadow-lg shadow-emerald-600/20 transition hover:bg-emerald-700">
+                  Send Message
                 </button>
-                <p className="text-xs text-gray-500">
-                  Dengan mengirimkan formulir ini, Anda menyetujui kebijakan privasi kami.
-                </p>
-              </form>
+              </div>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-gray-100 py-8 text-sm text-gray-600">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} Pulp & Paper Co. Semua hak dilindungi.</p>
-          <div className="flex items-center gap-6">
-            <a href="#sustainability" className="hover:text-gray-900">Lingkungan</a>
-            <a href="#products" className="hover:text-gray-900">Produk</a>
-            <a href="#about" className="hover:text-gray-900">Profil</a>
+      {/* Footer */}
+      <footer className="border-t border-gray-100 bg-white">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 text-sm text-gray-600 lg:px-8">
+          <p>© {new Date().getFullYear()} GreenFiber. All rights reserved.</p>
+          <div className="hidden gap-6 sm:flex">
+            <a href="#" className="hover:text-gray-900">Privacy</a>
+            <a href="#" className="hover:text-gray-900">Terms</a>
           </div>
         </div>
       </footer>
     </div>
   );
 }
+
+export default App;
